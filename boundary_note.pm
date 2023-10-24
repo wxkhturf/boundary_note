@@ -23,7 +23,10 @@ sub del_note{
                 if($line =~ /$note_head/){
                     $line =~ s/$note_head/\/\//g;
                     push(@output, $line);
-                } elsif($line !~ /\/\//){
+                } elsif( $line =~/\/\//){
+                    $line =~ s/\/\/.*//g;
+                    push(@output, $line);
+                } else {
                     push(@output, $line);
                 }
             }

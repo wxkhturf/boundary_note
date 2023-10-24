@@ -114,8 +114,10 @@ addr_ctr_polj   addr_ctr_polj(
 
 
 
+
 //222222222222222222222
 // 33333333333333333333333
+
 always@(*)
     begin
         if(state == IDLE)
@@ -127,6 +129,7 @@ always@(*)
                 `INTT:  nextstate = STATE7;
                 `Point: nextstate = POINT;
                 default:nextstate = POINT;
+            endcase 
         end
         else if(state == FINISH)
             nextstate = IDLE;
